@@ -1,0 +1,17 @@
+Package: dynalyzer
+Type: Package
+Title: Dynamic Analysis Data Analysis Pipeline
+Version: 1.0
+Date: 2019-05-11
+Authors@R:
+    person(given = "Aviral",
+           family = "Goel",
+           role = c("aut", "cre"),
+           email = "goel.aviral@gmail.com")
+Description: Exposes a parallelized, modular pipeline for analyzing terabytes
+    of data obtained from dynamic analysis of R using the R-dyntrace toolchain.
+License: MIT
+BugReports: https://github.com/aviralg/dynalyzer/issues
+Encoding: UTF-8
+LazyData: true
+
