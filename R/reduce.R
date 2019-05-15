@@ -26,9 +26,9 @@ reduce.dynalyzer.analysis.group <- function(analysis_group, settings) {
             map(function(raw_data_filepath) {
                 filename <- path_ext_remove(path_ext_remove(path_file(raw_data_filepath)))
                 delayedAssign(filename,
-                              promisedyntracer::read_data_table(path(settings$input_dirpath, filename),
-                                                                binary = settings$binary,
-                                                                compression_level = settings$compression_level),
+                              read_data_table(path(settings$input_dirpath, filename),
+                                              binary = settings$binary,
+                                              compression_level = settings$compression_level),
                               assign.env = analyses)
             })
 
@@ -43,11 +43,11 @@ reduce.dynalyzer.analysis.group <- function(analysis_group, settings) {
         analyses %>%
             imap(function(table, table_name) {
                 filepath <- path(output_dirpath, table_name)
-                promisedyntracer::write_data_table(table,
-                                                   filepath,
-                                                   truncate = TRUE,
-                                                   binary = settings$binary,
-                                                   compression_level = settings$compression_level)
+                write_data_table(table,
+                                 filepath,
+                                 truncate = TRUE,
+                                 binary = settings$binary,
+                                 compression_level = settings$compression_level)
                 filepath
             })
     }

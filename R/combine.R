@@ -72,10 +72,10 @@ combine_group <- function(data, settings, output_dirpath) {
         pmap(read_data_file_and_mutate, settings, pb) %>%
         discard(function(df) is.null(df) || nrow(df) == 0 || ncol(df) == 0) %>%
         bind_rows() %>%
-        promisedyntracer::write_data_table(output_filepath,
-                                           truncate = TRUE,
-                                           binary = settings$binary,
-                                           compression_level = settings$compression_level)
+        write_data_table(output_filepath,
+                         truncate = TRUE,
+                         binary = settings$binary,
+                         compression_level = settings$compression_level)
 
 
     tibble(output_filepath = output_filepath)

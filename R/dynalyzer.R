@@ -1,3 +1,4 @@
+#' @useDynLib dynalyzer, .registration = TRUE, .fixes = "C_"
 #' @importFrom optparse make_option OptionParser parse_args2
 #' @importFrom readr write_file
 #' @importFrom fs file_exists path_ext_remove

@@ -18,6 +18,8 @@ install: clean
 clean:
 	rm -rf dynalyzer*.tar.gz
 	rm -rf *.Rcheck
+	rm -rf src/*.so
+	rm -rf src/*.o
 
 document:
 	$(R_DYNTRACE) -e "devtools::document()"

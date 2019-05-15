@@ -56,13 +56,13 @@ summarize.dynalyzer.analysis.group <- function(analysis_group, settings) {
 
                 info("=> Writing ", output_filepath, "\n")
 
-                promisedyntracer::write_data_table(df, output_filepath,
-                                                   truncate = TRUE,
-                                                   binary = settings$binary,
-                                                   compression_level = settings$compression_level)
+                write_data_table(df, output_filepath,
+                                 truncate = TRUE,
+                                 binary = settings$binary,
+                                 compression_level = settings$compression_level)
                 path(output_filepath,
-                     ext = promisedyntracer::data_table_extension(settings$binary,
-                                                                  settings$compression_level))
+                     ext = data_table_extension(settings$binary,
+                                                settings$compression_level))
             }
         )
 
