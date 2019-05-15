@@ -14,4 +14,15 @@ License: MIT
 BugReports: https://github.com/aviralg/dynalyzer/issues
 Encoding: UTF-8
 LazyData: true
-
+Imports:
+    dplyr,
+    magrittr,
+    stringr,
+    fs,
+    purrr,
+    lubridate,
+    optparse,
+    tibble,
+    rlang,
+    tidyr
+RoxygenNote: 6.1.1
