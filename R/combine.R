@@ -6,6 +6,7 @@ combine <- function(object, ...) UseMethod("combine")
 combine.dynalyzer.analysis.group <- function(analysis_group, settings) {
 
     dir_create(settings$output_dirpath)
+    dir_create(path(settings$output_dirpath, settings$analysis))
 
     reduced_analysis_filename_glob <- str_c("*",
                                             data_table_extension(settings$binary,
@@ -83,6 +84,10 @@ combine_group <- function(data, settings, output_dirpath) {
 
 
 combine_groups <- function(settings, data) {
+
+    if(nrow(data) == 0) {
+        return(tibble())
+    }
 
     filename <- data$filename[1]
 

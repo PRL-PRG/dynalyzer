@@ -62,7 +62,7 @@ scan.dynalyzer.analysis.group <- function(analysis_group, settings) {
         select(script_dirpath) %>%
         write_csv(path(settings$valid_scripts_filepath), col_names = FALSE)
 
-    info("Writing invalid scripts to '",  settings$valid_scripts_filepath, "'.\n")
+    info("Writing invalid scripts to '",  settings$invalid_scripts_filepath, "'.\n")
 
     all_scripts %>%
         filter(!valid) %>%
