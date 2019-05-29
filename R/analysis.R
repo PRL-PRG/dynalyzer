@@ -132,3 +132,27 @@ create_combiner_output <- function(...) {
 create_summarizer_output <- function(...) {
     structure(list(...), class = "dynalyzer.summarizer.output")
 }
+
+
+#' @export
+create_report_template <- function(...) {
+    structure(list(filepath = system.file(...)),
+              class = "dynalyzer.report.template")
+}
+
+#' @export
+get_filepath <- function(object, ...) UseMethod("get_filepath")
+
+#' @export
+get_filepath.dynalyzer.report.template <- function(report_template) report_template$filepath
+
+#' @export
+set_filepath <- function(object, ...) UseMethod("set_filepath")
+
+#' @export
+set_filepath.dynalyzer.report.template <- function(report_template, filepath) {
+    report_template$filepath <- filepath
+    filepath
+}
+
+
