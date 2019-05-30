@@ -6,4 +6,5 @@
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_c
 #' @importFrom tools checkVignettes pkgVignettes Rd_db Rd2ex
+#' @importFrom BiocManager install available
 "_PACKAGE"

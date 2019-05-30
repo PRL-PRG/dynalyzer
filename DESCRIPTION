@@ -24,5 +24,10 @@ Imports:
     optparse,
     tibble,
     rlang,
-    tidyr
+    tidyr,
+    BiocManager,
+    rmarkdown,
+    knitr,
+    processx,
+    progress
 RoxygenNote: 6.1.1
